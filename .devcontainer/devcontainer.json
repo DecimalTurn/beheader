@@ -1,0 +1,22 @@
+{
+  "name": "Beheader Development Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "oven.bun-vscode",
+        "ms-vscode-remote.remote-containers"
+      ]
+    }
+  },
+  // Verify installations after container creation
+  "postCreateCommand": "bun --version && ffmpeg -version && convert --version && mp4edit --version",
+  
+  // Use the non-root user created in the Dockerfile
+  "remoteUser": "vscode",
+  
+  // Set the working directory
+  "workspaceFolder": "/workspace"
+}
