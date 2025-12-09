@@ -13,10 +13,4 @@
   },
   // Verify installations after container creation
   "postCreateCommand": "bun --version && ffmpeg -version && convert --version && mp4edit --version",
-  
-  // Use the non-root user created in the Dockerfile
-  "remoteUser": "vscode",
-  
-  // Set the working directory
-  "workspaceFolder": "/workspace"
 }

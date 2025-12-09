@@ -1,0 +1,766 @@
+
+=================================================================================
+2025-12-09 17:41:44.211Z: Configuration starting...
+2025-12-09 17:41:44.229Z: Cloning...
+
+=================================================================================
+2025-12-09 17:41:44.849Z: Creating container...
+2025-12-09 17:41:44.891Z: $ devcontainer up --id-label Type=codespaces --workspace-folder /var/lib/docker/codespacemount/workspace/beheader --mount type=bind,source=/.codespaces/agent/mount/cache,target=/vscode --user-data-folder /var/lib/docker/codespacemount/.persistedshare --container-data-folder .vscode-remote/data/Machine --container-system-data-folder /var/vscode-remote --log-level trace --log-format json --update-remote-user-uid-default never --mount-workspace-git-root false --omit-config-remote-env-from-metadata --skip-non-blocking-commands --skip-post-create --config "/var/lib/docker/codespacemount/workspace/beheader/.devcontainer/devcontainer.json" --override-config /root/.codespaces/shared/merged_devcontainer.json --default-user-env-probe loginInteractiveShell --container-session-data-folder /workspaces/.codespaces/.persistedshare/devcontainers-cli/cache --secrets-file /root/.codespaces/shared/user-secrets-envs.json
+2025-12-09 17:41:45.041Z: @devcontainers/cli 0.80.0. Node.js v18.20.6. linux 6.8.0-1030-azure x64.
+2025-12-09 17:41:45.560Z: $ docker buildx build --load --build-arg BUILDKIT_INLINE_CACHE=1 -f /tmp/devcontainercli-root/container-features/0.80.0-1765302105556/Dockerfile-with-features -t vsc-beheader-30c41106c2f4aa97771c9b48c11981f774ca065a28fbf8342c7da54782cca68d --target dev_containers_target_stage --build-arg _DEV_CONTAINERS_BASE_IMAGE=dev_container_auto_added_stage_label /var/lib/docker/codespacemount/workspace/beheader/.devcontainer
+2025-12-09 17:41:46.214Z: #0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile-with-features
+#1 transferring dockerfile: 1.67kB 0.0s done
+#1 DONE 0.1s
+2025-12-09 17:41:46.215Z: 
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.1s
+
+#3 [auth] library/alpine:pull token for registry-1.docker.io
+2025-12-09 17:41:46.365Z: #3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/alpine:3.19
+2025-12-09 17:41:46.583Z: #4 DONE 0.4s
+2025-12-09 17:41:46.733Z: 
+#5 [dev_container_auto_added_stage_label 1/4] FROM docker.io/library/alpine:3.19@sha256:6baf43584bcb78f2e5847d1de515f23499913ac9f12bdf834811a3145eb11ca1
+#5 resolve docker.io/library/alpine:3.19@sha256:6baf43584bcb78f2e5847d1de515f23499913ac9f12bdf834811a3145eb11ca1 0.0s done
+#5 sha256:b58899f069c47216f6002a6850143dc6fae0d35eb8b0df9300bbe6327b9c2171 1.02kB / 1.02kB done
+#5 sha256:83b2b6703a620bf2e001ab57f7adc414d891787b3c59859b1b62909e48dd2242 581B / 581B done
+#5 sha256:17a39c0ba978cc27001e9c56a480f98106e1ab74bd56eb302f9fd4cf758ea43f 1.05MB / 3.42MB 0.1s
+#5 sha256:6baf43584bcb78f2e5847d1de515f23499913ac9f12bdf834811a3145eb11ca1 8.08kB / 8.08kB done
+2025-12-09 17:41:46.842Z: #5 sha256:17a39c0ba978cc27001e9c56a480f98106e1ab74bd56eb302f9fd4cf758ea43f 3.42MB / 3.42MB 0.2s done
+#5 extracting sha256:17a39c0ba978cc27001e9c56a480f98106e1ab74bd56eb302f9fd4cf758ea43f
+2025-12-09 17:41:47.000Z: #5 extracting sha256:17a39c0ba978cc27001e9c56a480f98106e1ab74bd56eb302f9fd4cf758ea43f 0.1s done
+#5 DONE 0.4s
+2025-12-09 17:41:47.152Z: 
+#6 [dev_container_auto_added_stage_label 2/4] RUN apk add --no-cache     bash     curl     unzip     zip     ffmpeg     imagemagick     python3     ca-certificates     git     gcompat     libstdc++     shadow
+2025-12-09 17:41:47.310Z: #6 0.309 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz2025-12-09 17:41:47.310Z: 
+2025-12-09 17:41:47.551Z: #6 0.398 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz2025-12-09 17:41:47.551Z: 
+2025-12-09 17:41:47.693Z: #6 0.692 (1/140) Installing ncurses-terminfo-base (6.4_p20231125-r0)
+2025-12-09 17:41:47.793Z: #6 0.699 (2/140) Installing libncursesw (6.4_p20231125-r0)
+#6 0.711 (3/140) Installing readline (8.2.1-r2)
+#6 0.717 (4/140) Installing bash (5.2.21-r0)
+#6 0.736 Executing bash-5.2.21-r0.post-install2025-12-09 17:41:47.794Z: 
+#6 0.741 (5/140) Installing ca-certificates (20250911-r0)
+#6 0.776 (6/140) Installing brotli-libs (1.1.0-r1)
+#6 0.789 (7/140) Installing c-ares (1.27.0-r0)
+#6 0.793 (8/140) Installing libunistring (1.1-r2)
+2025-12-09 17:41:47.906Z: #6 0.809 (9/140) Installing libidn2 (2.3.4-r4)2025-12-09 17:41:47.906Z: 
+#6 0.813 (10/140) Installing nghttp2-libs (1.58.0-r0)
+#6 0.817 (11/140) Installing libpsl (0.21.5-r0)
+#6 0.820 (12/140) Installing libcurl (8.14.1-r2)
+#6 0.829 (13/140) Installing curl (8.14.1-r2)
+#6 0.837 (14/140) Installing libSvtAv1Enc (1.7.0-r0)
+#6 0.896 (15/140) Installing aom-libs (3.7.1-r0)
+2025-12-09 17:41:48.029Z: #6 0.958 (16/140) Installing libxau (1.0.11-r3)
+#6 0.965 (17/140) Installing libmd (1.1.0-r0)
+#6 0.968 (18/140) Installing libbsd (0.11.7-r3)
+#6 0.973 (19/140) Installing libxdmcp (1.1.4-r3)
+#6 0.976 (20/140) Installing libxcb (1.16-r0)
+#6 0.993 (21/140) Installing libx11 (1.8.7-r0)
+#6 1.028 (22/140) Installing hwdata-pci (0.377.2-r0)
+2025-12-09 17:41:48.133Z: #6 1.040 (23/140) Installing libpciaccess (0.17-r2)
+#6 1.044 (24/140) Installing libdrm (2.4.118-r0)
+#6 1.056 (25/140) Installing libxext (1.3.5-r3)
+#6 1.058 (26/140) Installing libxfixes (6.0.1-r3)2025-12-09 17:41:48.134Z: 
+#6 1.061 (27/140) Installing libffi (3.4.4-r3)
+#6 1.063 (28/140) Installing wayland-libs-client (1.22.0-r4)
+#6 1.067 (29/140) Installing libva (2.20.0-r0)
+#6 1.073 (30/140) Installing libvdpau (1.5-r2)
+#6 1.077 (31/140) Installing libgcc (13.2.1_git20231014-r0)
+#6 1.080 (32/140) Installing libstdc++ (13.2.1_git20231014-r0)
+#6 1.098 (33/140) Installing onevpl-libs (2023.3.1-r2)
+#6 1.104 (34/140) Installing ffmpeg-libavutil (6.1.1-r0)
+#6 1.114 (35/140) Installing libdav1d (1.3.0-r1)
+#6 1.133 (36/140) Installing libhwy (1.0.7-r0)
+2025-12-09 17:41:48.235Z: #6 1.146 (37/140) Installing lcms2 (2.15-r4)
+#6 1.151 (38/140) Installing libjxl (0.8.2-r0)
+#6 1.182 (39/140) Installing lame-libs (3.100-r5)
+#6 1.189 (40/140) Installing opus (1.4-r0)
+#6 1.196 (41/140) Installing rav1e-libs (0.6.6-r2)
+#6 1.214 (42/140) Installing libgomp (13.2.1_git20231014-r0)
+#6 1.220 (43/140) Installing soxr (0.1.3-r7)
+#6 1.225 (44/140) Installing ffmpeg-libswresample (6.1.1-r0)
+#6 1.231 (45/140) Installing libogg (1.3.5-r5)
+#6 1.235 (46/140) Installing libtheora (1.1.1-r18)
+2025-12-09 17:41:48.394Z: #6 1.246 (47/140) Installing libvorbis (1.3.7-r2)
+#6 1.257 (48/140) Installing libvpx (1.13.1-r0)
+#6 1.287 (49/140) Installing libsharpyuv (1.3.2-r0)
+#6 1.293 (50/140) Installing libwebp (1.3.2-r0)
+#6 1.301 (51/140) Installing libwebpmux (1.3.2-r0)
+#6 1.306 (52/140) Installing x264-libs (0.164_git20231001-r0)
+#6 1.331 (53/140) Installing numactl (2.0.16-r4)
+#6 1.338 (54/140) Installing x265-libs (3.5-r4)
+2025-12-09 17:41:48.440Z: #6 1.440 (55/140) Installing xvidcore (1.3.7-r2)
+2025-12-09 17:41:48.565Z: #6 1.457 (56/140) Installing ffmpeg-libavcodec (6.1.1-r0)
+#6 1.565 (57/140) Installing sdl2 (2.28.5-r0)
+2025-12-09 17:41:48.737Z: #6 1.579 (58/140) Installing alsa-lib (1.2.10-r0)2025-12-09 17:41:48.738Z: 
+#6 1.603 (59/140) Installing libexpat (2.7.3-r0)
+#6 1.607 (60/140) Installing libbz2 (1.0.8-r6)
+#6 1.610 (61/140) Installing libpng (1.6.44-r0)
+#6 1.614 (62/140) Installing freetype (2.13.2-r0)
+#6 1.621 (63/140) Installing fontconfig (2.14.2-r4)
+#6 1.645 (64/140) Installing fribidi (1.0.13-r0)
+#6 1.650 (65/140) Installing libintl (0.22.3-r0)
+#6 1.652 (66/140) Installing libblkid (2.39.3-r0)
+#6 1.659 (67/140) Installing libmount (2.39.3-r0)
+#6 1.665 (68/140) Installing pcre2 (10.42-r2)
+#6 1.674 (69/140) Installing glib (2.78.6-r0)
+2025-12-09 17:41:48.783Z: #6 1.706 (70/140) Installing graphite2 (1.3.14-r6)
+#6 1.713 (71/140) Installing harfbuzz (8.3.0-r0)
+#6 1.733 (72/140) Installing libunibreak (5.1-r3)
+#6 1.757 (73/140) Installing libass (0.17.1-r1)
+#6 1.772 (74/140) Installing libbluray (1.3.4-r1)
+#6 1.783 (75/140) Installing mpg123-libs (1.32.8-r0)
+2025-12-09 17:41:48.887Z: #6 1.790 (76/140) Installing libopenmpt (0.7.3-r1)2025-12-09 17:41:48.888Z: 
+#6 1.802 (77/140) Installing cjson (1.7.19-r0)
+#6 1.806 (78/140) Installing mbedtls (2.28.10-r0)
+#6 1.816 (79/140) Installing librist (0.2.10-r0)
+#6 1.824 (80/140) Installing libsrt (1.5.3-r0)
+#6 1.835 (81/140) Installing libssh (0.10.6-r0)
+#6 1.850 (82/140) Installing xz-libs (5.4.5-r1)
+#6 1.855 (83/140) Installing libxml2 (2.11.8-r3)
+#6 1.868 (84/140) Installing libsodium (1.0.19-r0)
+#6 1.878 (85/140) Installing libzmq (4.3.5-r2)
+#6 1.887 (86/140) Installing ffmpeg-libavformat (6.1.1-r0)
+2025-12-09 17:41:49.001Z: #6 1.909 (87/140) Installing serd-libs (0.32.0-r0)
+#6 1.912 (88/140) Installing zix-libs (0.4.2-r0)
+#6 1.917 (89/140) Installing sord-libs (0.16.16-r0)
+#6 1.925 (90/140) Installing sratom (0.6.16-r0)
+#6 1.928 (91/140) Installing lilv-libs (0.24.22-r0)
+#6 1.934 (92/140) Installing glslang-libs (1.3.261.1-r0)
+#6 1.963 (93/140) Installing libdovi (3.2.0-r1)2025-12-09 17:41:49.001Z: 
+#6 1.970 (94/140) Installing spirv-tools (1.3.261.1-r0)
+#6 2.001 (95/140) Installing shaderc (2023.7-r0)
+2025-12-09 17:41:49.129Z: #6 2.024 (96/140) Installing vulkan-loader (1.3.261.1-r0)
+#6 2.032 (97/140) Installing libplacebo (6.338.1-r0)
+#6 2.043 (98/140) Installing ffmpeg-libpostproc (6.1.1-r0)
+#6 2.052 (99/140) Installing ffmpeg-libswscale (6.1.1-r0)
+#6 2.059 (100/140) Installing vidstab (1.1.1-r0)
+#6 2.062 (101/140) Installing zimg (3.0.5-r2)
+#6 2.071 (102/140) Installing ffmpeg-libavfilter (6.1.1-r0)
+#6 2.125 (103/140) Installing libasyncns (0.8-r2)
+2025-12-09 17:41:49.230Z: #6 2.132 (104/140) Installing dbus-libs (1.14.10-r0)
+#6 2.138 (105/140) Installing libltdl (2.4.7-r3)2025-12-09 17:41:49.230Z: 
+#6 2.143 (106/140) Installing orc (0.4.39-r0)
+#6 2.152 (107/140) Installing libflac (1.4.3-r1)
+#6 2.160 (108/140) Installing libsndfile (1.2.2-r1)
+#6 2.173 (109/140) Installing speexdsp (1.2.1-r2)
+#6 2.176 (110/140) Installing tdb-libs (1.4.9-r0)
+#6 2.182 (111/140) Installing libpulse (16.1-r11)
+#6 2.198 (112/140) Installing libjpeg-turbo (3.0.1-r0)
+#6 2.205 (113/140) Installing v4l-utils-libs (1.24.1-r1)
+#6 2.213 (114/140) Installing ffmpeg-libavdevice (6.1.1-r0)
+#6 2.219 (115/140) Installing ffmpeg (6.1.1-r0)
+#6 2.229 (116/140) Installing musl-obstack (1.2.3-r2)
+2025-12-09 17:41:49.348Z: #6 2.233 (117/140) Installing libucontext (1.2-r2)
+#6 2.236 (118/140) Installing gcompat (1.1.0-r4)
+#6 2.241 (119/140) Installing git (2.43.7-r0)
+#6 2.301 (120/140) Installing fftw-double-libs (3.3.10-r5)
+#6 2.318 (121/140) Installing imagemagick-libs (7.1.1.32-r0)
+#6 2.348 (122/140) Installing imagemagick (7.1.1.32-r0)
+2025-12-09 17:41:49.592Z: #6 2.397 (123/140) Installing imagemagick-jpeg (7.1.1.32-r0)
+#6 2.401 (124/140) Installing imagemagick-jxl (7.1.1.32-r0)
+#6 2.407 (125/140) Installing libwebpdemux (1.3.2-r0)
+#6 2.411 (126/140) Installing imagemagick-webp (7.1.1.32-r0)
+#6 2.414 (127/140) Installing gdbm (1.23-r1)
+#6 2.417 (128/140) Installing mpdecimal (2.5.1-r2)
+#6 2.421 (129/140) Installing libpanelw (6.4_p20231125-r0)
+#6 2.424 (130/140) Installing sqlite-libs (3.44.2-r1)
+#6 2.441 (131/140) Installing python3 (3.11.14-r0)
+2025-12-09 17:41:49.648Z: #6 2.648 (132/140) Installing python3-pycache-pyc0 (3.11.14-r0)
+2025-12-09 17:41:49.794Z: #6 2.793 (133/140) Installing pyc (3.11.14-r0)
+2025-12-09 17:41:49.896Z: #6 2.795 (134/140) Installing python3-pyc (3.11.14-r0)
+#6 2.797 (135/140) Installing skalibs (2.14.0.1-r0)
+#6 2.804 (136/140) Installing utmps-libs (0.1.2.2-r0)
+#6 2.806 (137/140) Installing linux-pam (1.5.3-r7)
+#6 2.854 (138/140) Installing shadow (4.14.2-r0)
+#6 2.873 (139/140) Installing unzip (6.0-r14)
+#6 2.881 (140/140) Installing zip (3.0-r12)
+#6 2.890 Executing busybox-1.36.1-r20.trigger
+#6 2.895 Executing ca-certificates-20250911-r0.trigger
+2025-12-09 17:41:50.098Z: #6 2.940 Executing glib-2.78.6-r0.trigger
+#6 2.945 OK: 193 MiB in 155 packages
+2025-12-09 17:41:52.668Z: #6 DONE 5.7s
+2025-12-09 17:41:52.820Z: 
+#7 [dev_container_auto_added_stage_label 3/4] RUN curl -fsSL https://bun.sh/install | bash &&     mv /root/.bun /usr/local/bun &&     ln -s /usr/local/bun/bin/bun /usr/local/bin/bun
+2025-12-09 17:41:53.088Z: #7 0.425 
+#=#=#                                                                          2025-12-09 17:41:53.193Z: 
+##O#-#                                                                         2025-12-09 17:41:53.294Z: 
+#######################                                                   32.4%2025-12-09 17:41:53.423Z: 
+########################################################                  78.6%
+######################################################################## 100.0%
+2025-12-09 17:41:54.331Z: #7 1.667 bun was installed successfully to ~/.bun/bin/bun 
+2025-12-09 17:41:54.487Z: #7 1.669 
+#7 1.672 Manually add the directory to ~/.bashrc (or similar):
+#7 1.672   export BUN_INSTALL="$HOME/.bun" 
+#7 1.672   export PATH="$BUN_INSTALL/bin:$PATH" 
+#7 1.672 
+#7 1.672 To get started, run: 
+#7 1.672 
+#7 1.672   bun --help 
+2025-12-09 17:41:55.620Z: #7 DONE 2.9s
+2025-12-09 17:41:55.755Z: 
+#8 [dev_container_auto_added_stage_label 4/4] RUN curl -L https://www.bok.net/Bento4/binaries/Bento4-SDK-1-6-0-641.x86_64-unknown-linux.zip -o /tmp/bento4.zip &&     unzip /tmp/bento4.zip -d /opt &&     mv /opt/Bento4-SDK-* /opt/bento4 &&     rm /tmp/bento4.zip
+2025-12-09 17:41:55.881Z: #8 0.276   % Total 2025-12-09 17:41:56.031Z:    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#8 0.277                                  Dload  Upload   Total   Spent    Left  Speed
+#8 0.277 
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     02025-12-09 17:41:56.097Z: 
+100 11.4M  100 11.4M    0     0  53.2M      0 --:--:-- --:--:-- --:--:-- 53.4M
+2025-12-09 17:41:56.200Z: #8 0.497 Archive:  /tmp/bento4.zip2025-12-09 17:41:56.201Z: 
+#8 0.499   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/aac2mp4  
+#8 0.509   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp42aac  
+#8 0.519   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp42avc  
+#8 0.528   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp42hevc  
+#8 0.538   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp42hls  
+#8 0.548   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp42ts  
+#8 0.558   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4compact  
+#8 0.567   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4dash  
+#8 0.567   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4dashclone  
+2025-12-09 17:41:56.201Z: #8 0.567   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4dcfpackager  
+#8 0.577   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4decrypt  2025-12-09 17:41:56.201Z: 
+#8 0.586   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4dump  
+2025-12-09 17:41:56.302Z: #8 0.596   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4edit  
+#8 0.607   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4encrypt  
+#8 0.618   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4extract  
+#8 0.635   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4fragment  
+#8 0.647   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4hls  
+#8 0.647   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4iframeindex  
+#8 0.658   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4info  
+#8 0.668   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4mux  
+#8 0.679   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4rtphintinfo  
+#8 0.688   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4split  
+#8 0.697   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4tag  2025-12-09 17:41:56.543Z: 
+#8 0.707   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/docs/Bento4-HTML.zip  
+#8 0.720   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/docs/Bento4.chm  
+#8 0.729   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/docs/Bento4_SDK_documentation.doc  
+#8 0.730   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/docs/Bento4_SDK_documentation.pdf  
+#8 0.731   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/docs/LICENSE.txt  
+#8 0.732   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4.h  
+#8 0.732   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap48bdlAtom.h  
+#8 0.732   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Ac3Parser.h  
+#8 0.732   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Ac4Parser.h  
+#8 0.733   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Ac4Utils.h  
+#8 0.733   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4AdtsParser.h  
+#8 0.733   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4AesBlockCipher.h  
+#8 0.733   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4AinfAtom.h  
+#8 0.733   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Array.h  
+#8 0.734   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Atom.h  
+#8 0.734   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4AtomFactory.h  
+#8 0.734   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4AtomSampleTable.h  
+#8 0.734   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4AtomixAdapters.h  
+#8 0.735   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Av1cAtom.h  
+#8 0.735   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4AvcParser.h  
+#8 0.735   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4AvccAtom.h  
+#8 0.735   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4BitStream.h  
+#8 0.736   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4BlocAtom.h  
+#8 0.736   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4ByteStream.h  
+#8 0.736   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Co64Atom.h  
+#8 0.736   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Command.h  
+#8 0.737   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4CommandFactory.h  
+#8 0.737   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4CommonEncryption.h  
+#8 0.737   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Config.h  
+#8 0.737   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Constants.h  
+#8 0.737   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4ContainerAtom.h  
+#8 0.738   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4CttsAtom.h  
+#8 0.738   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Dac3Atom.h  
+#8 0.738   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Dac4Atom.h  
+#8 0.738   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4DataBuffer.h  
+#8 0.738   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Debug.h  
+#8 0.739   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Dec3Atom.h  
+#8 0.739   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4DecoderConfigDescriptor.h  
+#8 0.739   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4DecoderSpecificInfoDescriptor.h  
+#8 0.739   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Descriptor.h  
+#8 0.739   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4DescriptorFactory.h  
+#8 0.740   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4DrefAtom.h  
+#8 0.740   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-2025-12-09 17:41:56.544Z: unknown-linux/include/Ap4DvccAtom.h  
+#8 0.740   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4DynamicCast.h  
+#8 0.740   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Eac3Parser.h  
+#8 0.740   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4ElstAtom.h  
+#8 0.740   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4EsDescriptor.h  
+#8 0.741   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4EsdsAtom.h  
+#8 0.741   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Expandable.h  
+#8 0.741   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4File.h  
+#8 0.741   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4FileByteStream.h  
+#8 0.742   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4FileCopier.h  
+#8 0.742   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4FileWriter.h  
+#8 0.742   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4FragmentSampleTable.h  
+#8 0.742   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4FrmaAtom.h  
+#8 0.742   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4FtypAtom.h  
+#8 0.742   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4GrpiAtom.h  
+#8 0.743   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4HdlrAtom.h  
+#8 0.743   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4HevcParser.h  
+#8 0.743   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4HintTrackReader.h  
+#8 0.743   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Hmac.h  
+#8 0.744   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4HmhdAtom.h  
+#8 0.744   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4HvccAtom.h  
+#8 0.744   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4IkmsAtom.h  
+#8 0.744   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Interfaces.h  
+#8 0.745   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4IodsAtom.h  
+#8 0.745   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Ipmp.h  
+#8 0.745   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4IproAtom.h  
+#8 0.745   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4IsfmAtom.h  
+#8 0.745   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4IsltAtom.h  
+#8 0.745   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4IsmaCryp.h  
+#8 0.746   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4KeyWrap.h  
+#8 0.746   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4LinearReader.h  
+#8 0.746   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4List.h  
+#8 0.746   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Marlin.h  
+#8 0.747   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4MdhdAtom.h  
+#8 0.747   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4MehdAtom.h  
+#8 0.747   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4MetaData.h  
+#8 0.747   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4MfhdAtom.h  
+#8 0.747   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4MfroAtom.h  
+#8 0.748   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4MoovAtom.h  
+#8 0.748   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Movie.h  
+#8 0.748   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4MovieFragment.h  
+#8 0.748   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Mp4AudioInfo.h  
+#8 0.748   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Mpeg2Ts.h  
+#8 0.749   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/includ2025-12-09 17:41:56.544Z: e/Ap4MvhdAtom.h  
+#8 0.749   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4NalParser.h  
+#8 0.749   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4NeptuneAdapters.h  
+#8 0.749   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4NmhdAtom.h  
+#8 0.749   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4ObjectDescriptor.h  
+#8 0.750   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4OdafAtom.h  
+#8 0.750   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4OddaAtom.h  
+#8 0.750   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4OdheAtom.h  
+#8 0.750   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4OhdrAtom.h  
+#8 0.751   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4OmaDcf.h  
+#8 0.751   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4PdinAtom.h  
+#8 0.751   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Piff.h  
+#8 0.751   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Processor.h  
+#8 0.751   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Protection.h  
+#8 0.752   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4PsshAtom.h  
+#8 0.752   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Results.h  
+#8 0.752   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4RtpAtom.h  
+#8 0.752   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4RtpHint.h  
+#8 0.753   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4SLConfigDescriptor.h  
+#8 0.753   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4SaioAtom.h  
+#8 0.753   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4SaizAtom.h  
+#8 0.753   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Sample.h  
+#8 0.754   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4SampleDescription.h  
+#8 0.754   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4SampleEntry.h  
+#8 0.754   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4SampleSource.h  
+#8 0.755   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4SampleTable.h  
+#8 0.755   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4SbgpAtom.h  
+#8 0.755   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4SchmAtom.h  
+#8 0.755   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4SdpAtom.h  
+#8 0.755   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4SegmentBuilder.h  
+#8 0.755   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4SencAtom.h  
+#8 0.756   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4SgpdAtom.h  
+#8 0.756   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4SidxAtom.h  
+#8 0.756   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4SmhdAtom.h  
+#8 0.757   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4StcoAtom.h  
+#8 0.757   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4SthdAtom.h  
+#8 0.757   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4StreamCipher.h  
+#8 0.757   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4String.h  
+#8 0.757   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4StscAtom.h  
+#8 0.757   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4StsdAtom.h  
+#8 0.757   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4StssAtom.h  
+#8 0.757   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4StszAtom.h  
+#8 0.757   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4SttsAtom.h  
+#8 0.758   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Stz22025-12-09 17:41:56.544Z: Atom.h  
+#8 0.758   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4SyntheticSampleTable.h  
+#8 0.758   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4TencAtom.h  
+#8 0.758   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4TfdtAtom.h  
+#8 0.758   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4TfhdAtom.h  
+#8 0.758   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4TfraAtom.h  
+#8 0.759   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4TimsAtom.h  
+#8 0.759   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4TkhdAtom.h  
+#8 0.759   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Track.h  
+#8 0.759   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4TrakAtom.h  
+#8 0.759   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4TrefTypeAtom.h  
+#8 0.759   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4TrexAtom.h  
+#8 0.760   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4TrunAtom.h  
+#8 0.760   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Types.h  
+#8 0.760   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4UrlAtom.h  
+#8 0.760   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Utils.h  
+#8 0.761   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4UuidAtom.h  
+#8 0.761   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4Version.h  
+#8 0.761   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4VmhdAtom.h  
+#8 0.761   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Ap4VpccAtom.h  
+#8 0.761   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/include/Bento4C.h  
+#8 0.762   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/lib/libap4.a  
+#8 0.782   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/utils/aes.py  
+#8 0.783   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/utils/check-indexes.py  
+#8 0.783   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/utils/mp4-dash-clone.py  
+#8 0.783   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/utils/mp4-dash-encode.py  
+#8 0.783   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/utils/mp4-dash.py  
+#8 0.785   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/utils/mp4-hls.py  
+#8 0.785   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/utils/mp4utils.py  
+#8 0.786   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/utils/pr-derive-key.py  
+#8 0.786   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/utils/skm.py  
+#8 0.786   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/utils/subtitles.py  
+#8 0.786   inflating: /opt/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/utils/wv-request.py  
+2025-12-09 17:41:56.799Z: #8 DONE 1.2s
+2025-12-09 17:41:56.954Z: 
+#9 preparing layers for inline cache
+2025-12-09 17:41:58.036Z: #9 DONE 1.2s
+
+#10 exporting to image
+#10 exporting layers done
+2025-12-09 17:41:58.078Z: #10 writing image sha256:51055084ad6782ee4671e5d1d464714aa28b9165ed806e246f8964644ce15888 done
+#10 naming to docker.io/library/vsc-beheader-30c41106c2f4aa97771c9b48c11981f774ca065a28fbf8342c7da54782cca68d done
+#10 DONE 0.0s
+2025-12-09 17:41:58.085Z: Stop: Run: docker buildx build --load --build-arg BUILDKIT_INLINE_CACHE=1 -f /tmp/devcontainercli-root/container-features/0.80.0-1765302105556/Dockerfile-with-features -t vsc-beheader-30c41106c2f4aa97771c9b48c11981f774ca065a28fbf8342c7da54782cca68d --target dev_containers_target_stage --build-arg _DEV_CONTAINERS_BASE_IMAGE=dev_container_auto_added_stage_label /var/lib/docker/codespacemount/workspace/beheader/.devcontainer
+2025-12-09 17:41:58.093Z: $127.0.0.1 --cap-add sys_nice --network host --entrypoint /bin/sh vsc-beheader-30c41106c2f4aa97771c9b48c11981f774ca065a28fbf8342c7da54782cca68d -c echo Container started
+2025-12-09 17:41:58.248Z: Container started
+2025-12-09 17:41:58.410Z: Shell server terminated (code: 126, signal: null)
+2025-12-09 17:41:58.414Z: unable to find user vscode: no matching entries in passwd file
+2025-12-09 17:41:58.415Z: {"outcome":"error","message":"An error occurred setting up the container.","description":"An error occurred setting up the container.","containerId":"bb6058dd1c46c389debc623a280c0458f05cea5b1368add27bc6e3fe7d50703d"}
+2025-12-09 17:41:58.418Z: Error: An error occurred setting up the container.
+2025-12-09 17:41:58.421Z:     at w6 (/.codespaces/agent/bin/node_modules/@devcontainers/cli/dist/spec-node/devContainersSpecCLI.js:467:1253)
+2025-12-09 17:41:58.422Z:     at ax (/.codespaces/agent/bin/node_modules/@devcontainers/cli/dist/spec-node/devContainersSpecCLI.js:467:997)
+2025-12-09 17:41:58.422Z:     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-12-09 17:41:58.422Z:     at async Y6 (/.codespaces/agent/bin/node_modules/@devcontainers/cli/dist/spec-node/devContainersSpecCLI.js:484:3842)
+2025-12-09 17:41:58.422Z:     at async BC (/.codespaces/agent/bin/node_modules/@devcontainers/cli/dist/spec-node/devContainersSpecCLI.js:484:4957)
+2025-12-09 17:41:58.422Z:     at async p7 (/.codespaces/agent/bin/node_modules/@devcontainers/cli/dist/spec-node/devContainersSpecCLI.js:665:202)
+2025-12-09 17:41:58.422Z:     at async d7 (/.codespaces/agent/bin/node_modules/@devcontainers/cli/dist/spec-node/devContainersSpecCLI.js:664:14804)
+2025-12-09 17:41:58.422Z:     at async /.codespaces/agent/bin/node_modules/@devcontainers/cli/dist/spec-node/devContainersSpecCLI.js:484:1188
+2025-12-09 17:41:58.428Z: devcontainer process exited with exit code 1
+
+====================================== ERROR ====================================
+2025-12-09 17:41:58.437Z: Failed to create container.
+=================================================================================
+2025-12-09 17:41:58.437Z: Error: An error occurred setting up the container.
+2025-12-09 17:41:58.440Z: Error code: 1302 (UnifiedContainersErrorFatalCreatingContainer)
+
+====================================== ERROR ====================================
+2025-12-09 17:41:58.450Z: Container creation failed.
+=================================================================================
+2025-12-09 17:41:58.529Z: 
+
+===================================== WARNING ===================================
+2025-12-09 17:41:58.531Z: Creating recovery container.
+=================================================================================
+
+=================================================================================
+2025-12-09 17:42:53.082Z: Creating container...
+2025-12-09 17:42:53.105Z: $ devcontainer up --id-label Type=codespaces --workspace-folder /var/lib/docker/codespacemount/workspace/beheader --mount type=bind,source=/.codespaces/agent/mount/cache,target=/vscode --user-data-folder /var/lib/docker/codespacemount/.persistedshare --container-data-folder .vscode-remote/data/Machine --container-system-data-folder /var/vscode-remote --log-level trace --log-format json --update-remote-user-uid-default never --mount-workspace-git-root false --omit-config-remote-env-from-metadata --skip-non-blocking-commands --skip-post-create --config "/var/lib/docker/codespacemount/workspace/beheader/.devcontainer/devcontainer.json" --override-config /root/.codespaces/shared/merged_devcontainer.json --default-user-env-probe loginInteractiveShell --container-session-data-folder /workspaces/.codespaces/.persistedshare/devcontainers-cli/cache --secrets-file /root/.codespaces/shared/user-secrets-envs.json
+2025-12-09 17:42:53.284Z: @devcontainers/cli 0.80.0. Node.js v18.20.6. linux 6.8.0-1030-azure x64.
+2025-12-09 17:42:53.639Z: $alpine -c echo Container started
+2025-12-09 17:42:53.659Z: Unable to find image 'mcr.microsoft.com/devcontainers/base:alpine' locally
+2025-12-09 17:42:53.765Z: alpine: Pulling from devcontainers/base
+2025-12-09 17:42:53.815Z: 
+[1A[2K
+2d35ebdb57d9: Pulling fs layer 
+[1B
+[1A[2K
+d5a727f5a133: Pulling fs layer 
+[1B
+[1A[2K
+7b2e67e05279: Pulling fs layer 
+[1B
+[1A[2K
+f499e78eebd5: Pulling fs layer 
+[1B
+[1A[2K
+cdc1e897ea36: Pulling fs layer 
+[1B
+[1A[2K
+b21231904abf: Pulling fs layer 
+[1B
+[1A[2K
+2fc802c9c7e9: Pulling fs layer 
+[1B2025-12-09 17:42:53.815Z: [4A[2K
+f499e78eebd5: Waiting 
+[4B[3A[2K
+cdc1e897ea36: Waiting 
+[3B[2A[2K
+b21231904abf: Waiting 
+[2B[1A[2K
+2fc802c9c7e9: Waiting 
+[1B2025-12-09 17:42:53.884Z: [5A2025-12-09 17:42:53.887Z: [2K
+7b2e67e05279: Downloading     134B/134B
+[5B2025-12-09 17:42:53.887Z: [5A[2K
+7b2e67e05279: Verifying Checksum 
+[5B2025-12-09 17:42:53.887Z: [5A[2K
+7b2e67e05279: Download complete 
+[5B2025-12-09 17:42:53.899Z: [6A[2K
+d5a727f5a133: Downloading     407B/407B
+[6B2025-12-09 17:42:53.899Z: [6A[2K
+d5a727f5a133: Verifying Checksum 
+[6B[6A[2K
+d5a727f5a133: Download complete 
+[6B2025-12-09 17:42:53.936Z: [4A[2K
+f499e78eebd5: Downloading     224B/224B
+[4B[4A[2K
+f499e78eebd5: Verifying Checksum 
+[4B[4A[2K
+f499e78eebd5: Download complete 
+[4B2025-12-09 17:42:53.951Z: [3A[2K
+cdc1e897ea36: Downloading     233B/233B
+[3B[3A[2K
+cdc1e897ea36: Verifying Checksum 
+[3B[3A[2K2025-12-09 17:42:53.952Z: 
+cdc1e897ea36: Download complete 
+[3B2025-12-09 17:42:54.003Z: [2A[2K
+b21231904abf: Downloading  538.7kB/204.2MB
+[2B2025-12-09 17:42:54.004Z: [1A[2K
+2fc802c9c7e9: Downloading  440.4kB/42.53MB
+[1B2025-12-09 17:42:54.067Z: [7A[2K
+2d35ebdb57d9: Downloading  48.34kB/3.802MB
+[7B2025-12-09 17:42:54.099Z: [7A2025-12-09 17:42:54.100Z: [2K
+2d35ebdb57d9: Verifying Checksum 
+[7B2025-12-09 17:42:54.104Z: [7A[2K
+2d35ebdb57d9: Download complete 
+[7B2025-12-09 17:42:54.107Z: [2A[2K
+b21231904abf: Downloading  20.53MB/204.2MB
+[2B[1A[2K
+2fc802c9c7e9: Downloading  14.93MB/42.53MB
+[1B[7A[2K
+2d35ebdb57d9: Extracting  65.54kB/3.802MB
+[7B2025-12-09 17:42:54.223Z: [2A[2K
+b21231904abf: Downloading  30.26MB/204.2MB
+2025-12-09 17:42:54.223Z: [2B[1A[2K
+2fc802c9c7e9: Downloading  21.74MB/42.53MB
+[1B2025-12-09 17:42:54.313Z: [2A2025-12-09 17:42:54.313Z: [2K
+b21231904abf: Downloading  47.56MB/204.2MB
+[2B2025-12-09 17:42:54.314Z: [1A[2K2025-12-09 17:42:54.315Z: 
+2fc802c9c7e9: Downloading  37.93MB/42.53MB
+[1B2025-12-09 17:42:54.347Z: [1A[2K2025-12-09 17:42:54.347Z: 
+2fc802c9c7e9: Verifying Checksum 
+[1B[1A[2K
+2fc802c9c7e9: Download complete 
+[1B2025-12-09 17:42:54.352Z: [7A[2K2025-12-09 17:42:54.352Z: 
+2d35ebdb57d9: Extracting  262.1kB/3.802MB
+[7B2025-12-09 17:42:54.414Z: [2A[2K
+b21231904abf: Downloading  65.95MB/204.2MB
+[2B2025-12-09 17:42:54.455Z: [7A[2K
+2d35ebdb57d9: Extracting  1.442MB/3.802MB
+[7B2025-12-09 17:42:54.517Z: [2A[2K
+b21231904abf: 2025-12-09 17:42:54.517Z: Downloading  89.19MB/204.2MB
+2025-12-09 17:42:54.518Z: [2B2025-12-09 17:42:54.536Z: [7A2025-12-09 17:42:54.537Z: [2K
+2d35ebdb57d9: Extracting  3.802MB/3.802MB
+[7B2025-12-09 17:42:54.639Z: [2A2025-12-09 17:42:54.642Z: [2K
+b21231904abf: Downloading  109.2MB/204.2MB
+[2B2025-12-09 17:42:54.718Z: [2A[2K
+b21231904abf: Downloading  121.1MB/204.2MB
+[2B2025-12-09 17:42:54.753Z: [7A[2K
+2d35ebdb57d9: Pull complete 
+[7B2025-12-09 17:42:54.764Z: [6A[2K
+d5a727f5a133: 2025-12-09 17:42:54.764Z: Extracting     407B/407B
+[6B2025-12-09 17:42:54.765Z: [6A[2K
+d5a727f5a133: Extracting     407B/407B
+[6B2025-12-09 17:42:54.829Z: [2A[2K
+b21231904abf: Downloading  139.5MB/204.2MB
+[2B2025-12-09 17:42:54.925Z: [2A[2K
+b21231904abf: Downloading  156.8MB/204.2MB
+[2B2025-12-09 17:42:55.025Z: [2A[2K
+b21231904abf: 2025-12-09 17:42:55.027Z: Downloading  175.2MB/204.2MB
+[2B2025-12-09 17:42:55.129Z: [2A[2K
+b21231904abf: Downloading  189.8MB/204.2MB
+[2B2025-12-09 17:42:55.234Z: [2A[2K
+b21231904abf: Downloading  202.2MB/204.2MB
+[2B2025-12-09 17:42:55.254Z: [2A[2K2025-12-09 17:42:55.256Z: 
+b21231904abf: Verifying Checksum 
+[2B[2A[2K
+b21231904abf: Download complete 
+[2B2025-12-09 17:42:58.517Z: [6A[2K
+d5a727f5a133: Pull complete 
+[6B2025-12-09 17:42:58.524Z: [5A2025-12-09 17:42:58.525Z: [2K
+7b2e67e05279: Extracting     134B/134B
+[5B[5A[2K
+7b2e67e05279: Extracting     134B/134B
+[5B2025-12-09 17:42:58.550Z: [5A2025-12-09 17:42:58.550Z: [2K
+7b2e67e05279: Pull complete 
+[5B2025-12-09 17:42:58.554Z: [4A[2K
+2025-12-09 17:42:58.554Z: f499e78eebd5: Extracting     224B/224B
+[4B2025-12-09 17:42:58.554Z: [4A2025-12-09 17:42:58.555Z: [2K
+f499e78eebd5: Extracting     224B/224B
+[4B2025-12-09 17:42:58.582Z: [4A[2K
+f499e78eebd5: Pull complete 
+[4B2025-12-09 17:42:58.586Z: [3A[2K
+cdc1e897ea36: Extracting     233B/233B
+[3B2025-12-09 17:42:58.587Z: [3A[2K
+cdc1e897ea36: Extracting     233B/233B
+[3B2025-12-09 17:42:58.618Z: [3A[2K
+cdc1e897ea36: Pull complete 
+[3B2025-12-09 17:42:58.738Z: [2A2025-12-09 17:42:58.738Z: [2K
+b21231904abf: Extracting  557.1kB/204.2MB
+[2B2025-12-09 17:42:58.845Z: [2A[2K2025-12-09 17:42:58.845Z: 
+b21231904abf: Extracting  4.456MB/204.2MB
+[2B2025-12-09 17:42:58.947Z: [2A[2K
+b21231904abf: 2025-12-09 17:42:58.947Z: Extracting  10.58MB/204.2MB
+[2B2025-12-09 17:42:59.061Z: [2A[2K
+b21231904abf: Extracting  15.04MB/204.2MB
+[2B2025-12-09 17:42:59.165Z: [2A[2K
+b21231904abf: Extracting  20.61MB/204.2MB
+[2B2025-12-09 17:42:59.306Z: [2A[2K
+b21231904abf: Extracting  24.51MB/204.2MB
+[2B2025-12-09 17:42:59.536Z: [2A[2K
+b21231904abf: Extracting  25.62MB/204.2MB
+[2B2025-12-09 17:42:59.696Z: [2A[2K
+b21231904abf: 2025-12-09 17:42:59.696Z: Extracting  26.74MB/204.2MB
+[2B2025-12-09 17:42:59.911Z: [2A[2K
+b21231904abf: Extracting   27.3MB/204.2MB
+[2B2025-12-09 17:43:00.011Z: [2A2025-12-09 17:43:00.011Z: [2K
+b21231904abf: Extracting  30.64MB/204.2MB
+[2B2025-12-09 17:43:00.118Z: [2A[2K
+b21231904abf: 2025-12-09 17:43:00.118Z: Extracting  32.31MB/204.2MB
+[2B2025-12-09 17:43:00.226Z: [2A[2K
+b21231904abf: 2025-12-09 17:43:00.226Z: Extracting  38.99MB/204.2MB
+[2B2025-12-09 17:43:00.328Z: [2A[2K
+b21231904abf: Extracting  44.56MB/204.2MB
+[2B2025-12-09 17:43:00.443Z: [2A[2K
+b21231904abf: Extracting  49.58MB/204.2MB
+[2B2025-12-09 17:43:00.568Z: [2A[2K
+b21231904abf: Extracting  52.36MB/204.2MB
+[2B2025-12-09 17:43:00.704Z: [2A[2K
+b21231904abf: Extracting  55.71MB/204.2MB
+[2B2025-12-09 17:43:00.818Z: [2A[2K
+2025-12-09 17:43:00.818Z: b21231904abf: Extracting   59.6MB/204.2MB
+[2B2025-12-09 17:43:00.938Z: [2A[2K
+b21231904abf: 2025-12-09 17:43:00.938Z: Extracting  62.39MB/204.2MB
+[2B2025-12-09 17:43:01.044Z: [2A[2K
+b21231904abf: Extracting  70.19MB/204.2MB
+[2B2025-12-09 17:43:01.148Z: [2A[2K
+b21231904abf: Extracting  76.87MB/204.2MB
+[2B2025-12-09 17:43:01.319Z: [2A[2K
+b21231904abf: Extracting   79.1MB/204.2MB
+[2B2025-12-09 17:43:01.425Z: [2A[2K
+b21231904abf: Extracting     83MB/204.2MB
+[2B2025-12-09 17:43:01.531Z: [2A[2K
+b21231904abf: Extracting  84.67MB/204.2MB
+[2B2025-12-09 17:43:01.640Z: [2A[2K
+b21231904abf: Extracting  85.79MB/204.2MB
+[2B2025-12-09 17:43:01.752Z: [2A[2K
+2025-12-09 17:43:01.753Z: b21231904abf: Extracting   86.9MB/204.2MB
+[2B2025-12-09 17:43:01.853Z: [2A2025-12-09 17:43:01.854Z: [2K
+b21231904abf: Extracting  92.47MB/204.2MB
+[2B2025-12-09 17:43:01.958Z: [2A2025-12-09 17:43:01.958Z: [2K
+b21231904abf: Extracting  99.71MB/204.2MB
+[2B2025-12-09 17:43:02.097Z: [2A[2K
+b21231904abf: Extracting  100.8MB/204.2MB
+[2B2025-12-09 17:43:02.170Z: [2A[2K2025-12-09 17:43:02.170Z: 
+b21231904abf: Extracting  105.3MB/204.2MB
+[2B2025-12-09 17:43:02.277Z: [2A[2K
+b21231904abf: Extracting  112.5MB/204.2MB
+[2B2025-12-09 17:43:02.382Z: [2A[2K
+b21231904abf: Extracting  118.7MB/204.2MB
+[2B2025-12-09 17:43:02.500Z: [2A2025-12-09 17:43:02.501Z: [2K
+b21231904abf: Extracting  124.2MB/204.2MB
+[2B2025-12-09 17:43:02.584Z: [2A2025-12-09 17:43:02.585Z: [2K
+b21231904abf: Extracting  127.6MB/204.2MB
+[2B2025-12-09 17:43:02.687Z: [2A2025-12-09 17:43:02.687Z: [2K
+b21231904abf: Extracting  133.7MB/204.2MB
+[2B2025-12-09 17:43:02.787Z: [2A[2K2025-12-09 17:43:02.788Z: 
+b21231904abf: Extracting  139.3MB/204.2MB
+[2B2025-12-09 17:43:02.962Z: [2A2025-12-09 17:43:02.964Z: [2K
+b21231904abf: Extracting  144.8MB/204.2MB
+[2B2025-12-09 17:43:03.006Z: [2A[2K
+b21231904abf: 2025-12-09 17:43:03.008Z: Extracting  149.8MB/204.2MB
+[2B2025-12-09 17:43:03.111Z: [2A2025-12-09 17:43:03.113Z: [2K
+b21231904abf: Extracting  157.1MB/204.2MB
+[2B2025-12-09 17:43:03.297Z: [2A[2K
+b21231904abf: Extracting  163.8MB/204.2MB
+[2B2025-12-09 17:43:03.327Z: [2A2025-12-09 17:43:03.328Z: [2K
+b21231904abf: Extracting  167.1MB/204.2MB
+[2B2025-12-09 17:43:03.436Z: [2A[2K
+b21231904abf: Extracting  174.9MB/204.2MB
+2025-12-09 17:43:03.436Z: [2B2025-12-09 17:43:03.537Z: [2A[2K
+b21231904abf: Extracting  181.6MB/204.2MB
+2025-12-09 17:43:03.538Z: [2B2025-12-09 17:43:03.645Z: [2A[2K
+b21231904abf: Extracting  187.7MB/204.2MB
+[2B2025-12-09 17:43:03.753Z: [2A[2K
+b21231904abf: 2025-12-09 17:43:03.753Z: Extracting  192.7MB/204.2MB
+[2B2025-12-09 17:43:03.884Z: [2A[2K
+b21231904abf: Extracting  193.3MB/204.2MB
+[2B2025-12-09 17:43:04.044Z: [2A2025-12-09 17:43:04.046Z: [2K
+b21231904abf: Extracting  194.4MB/204.2MB
+[2B2025-12-09 17:43:04.205Z: [2A2025-12-09 17:43:04.206Z: [2K
+b21231904abf: Extracting  195.5MB/204.2MB
+[2B2025-12-09 17:43:06.789Z: [2A[2K
+b21231904abf: Extracting  197.8MB/204.2MB
+[2B2025-12-09 17:43:06.895Z: [2A[2K
+b21231904abf: 2025-12-09 17:43:06.895Z: Extracting  198.9MB/204.2MB
+[2B2025-12-09 17:43:07.185Z: [2A[2K2025-12-09 17:43:07.185Z: 
+b21231904abf: Extracting  199.4MB/204.2MB
+[2B2025-12-09 17:43:07.340Z: [2A[2K
+b21231904abf: Extracting  200.5MB/204.2MB
+[2B2025-12-09 17:43:07.548Z: [2A[2K
+b21231904abf: Extracting  201.1MB/204.2MB
+[2B2025-12-09 17:43:07.816Z: [2A[2K
+b21231904abf: Extracting  201.7MB/204.2MB
+[2B2025-12-09 17:43:07.894Z: [2A[2K
+b21231904abf: Extracting  202.2MB/204.2MB
+[2B2025-12-09 17:43:07.906Z: [2A[2K
+b21231904abf: Extracting  204.2MB/204.2MB
+[2B2025-12-09 17:43:13.057Z: [2A[2K
+b21231904abf: Pull complete 
+[2B2025-12-09 17:43:13.588Z: [1A2025-12-09 17:43:13.590Z: [2K
+2fc802c9c7e9: Extracting    426kB/42.53MB
+[1B2025-12-09 17:43:13.720Z: [1A[2K2025-12-09 17:43:13.721Z: 
+2fc802c9c7e9: Extracting  1.704MB/42.53MB
+[1B2025-12-09 17:43:13.981Z: [1A[2K
+2fc802c9c7e9: Extracting  5.538MB/42.53MB
+[1B2025-12-09 17:43:14.135Z: [1A[2K
+2fc802c9c7e9: Extracting  5.964MB/42.53MB
+[1B2025-12-09 17:43:14.383Z: [1A[2K
+2fc802c9c7e9: Extracting  7.668MB/42.53MB
+2025-12-09 17:43:14.384Z: [1B2025-12-09 17:43:14.494Z: [1A[2K
+2fc802c9c7e9: Extracting  8.946MB/42.53MB
+[1B2025-12-09 17:43:14.684Z: [1A[2K
+2fc802c9c7e9: Extracting  12.78MB/42.53MB
+[1B2025-12-09 17:43:14.835Z: [1A[2K
+2fc802c9c7e9: 2025-12-09 17:43:14.835Z: Extracting  13.21MB/42.53MB
+[1B2025-12-09 17:43:15.009Z: [1A[2K
+2fc802c9c7e9: Extracting  15.76MB/42.53MB
+[1B2025-12-09 17:43:15.110Z: [1A[2K
+2fc802c9c7e9: Extracting   19.6MB/42.53MB
+[1B2025-12-09 17:43:15.217Z: [1A[2K
+2fc802c9c7e9: 2025-12-09 17:43:15.217Z: Extracting  24.71MB/42.53MB
+[1B2025-12-09 17:43:15.377Z: [1A[2K
+2fc802c9c7e9: Extracting  28.11MB/42.53MB
+[1B2025-12-09 17:43:15.443Z: [1A[2K
+2fc802c9c7e9: Extracting  30.24MB/42.53MB
+[1B2025-12-09 17:43:15.680Z: [1A[2K
+2fc802c9c7e9: Extracting  30.67MB/42.53MB
+[1B2025-12-09 17:43:15.784Z: [1A[2K
+2fc802c9c7e9: 2025-12-09 17:43:15.784Z: Extracting  31.52MB/42.53MB
+[1B2025-12-09 17:43:15.910Z: [1A2025-12-09 17:43:15.910Z: [2K
+2fc802c9c7e9: Extracting  31.95MB/42.53MB
+[1B2025-12-09 17:43:16.087Z: [1A[2K
+2fc802c9c7e9: Extracting  32.37MB/42.53MB
+[1B2025-12-09 17:43:16.178Z: [1A[2K
+2fc802c9c7e9: Extracting   32.8MB/42.53MB
+[1B2025-12-09 17:43:16.284Z: [1A[2K
+2fc802c9c7e9: 2025-12-09 17:43:16.284Z: Extracting  33.65MB/42.53MB
+[1B2025-12-09 17:43:16.429Z: [1A[2K
+2fc802c9c7e9: Extracting   34.5MB/42.53MB
+[1B2025-12-09 17:43:16.522Z: [1A2025-12-09 17:43:16.523Z: [2K
+2fc802c9c7e9: Extracting  37.06MB/42.53MB
+[1B2025-12-09 17:43:16.671Z: [1A[2K2025-12-09 17:43:16.671Z: 
+2fc802c9c7e9: Extracting  37.49MB/42.53MB
+[1B2025-12-09 17:43:16.796Z: [1A[2K
+2fc802c9c7e9: Extracting  40.04MB/42.53MB
+[1B2025-12-09 17:43:16.945Z: [1A2025-12-09 17:43:16.946Z: [2K2025-12-09 17:43:16.947Z: 
+2fc802c9c7e9: Extracting  40.89MB/42.53MB
+[1B2025-12-09 17:43:17.049Z: [1A[2K
+2fc802c9c7e9: Extracting  41.75MB/42.53MB
+[1B2025-12-09 17:43:17.210Z: [1A[2K
+2fc802c9c7e9: Extracting  42.17MB/42.53MB
+[1B2025-12-09 17:43:17.287Z: [1A[2K
+2fc802c9c7e9: Extracting  42.53MB/42.53MB
+[1B2025-12-09 17:43:19.130Z: [1A[2K
+2fc802c9c7e9: Pull complete 
+[1B2025-12-09 17:43:19.172Z: Digest: sha256:ade1ae1ab3dd5cd3a0c38aca42d417134d191e2273a75f8d450eb90716924205
+2025-12-09 17:43:19.178Z: Status: Downloaded newer image for mcr.microsoft.com/devcontainers/base:alpine
+2025-12-09 17:43:19.417Z: Container started
+2025-12-09 17:43:19.656Z: Outcome: success User: vscode WorkspaceFolder: /workspaces/beheader
+2025-12-09 17:43:19.662Z: devcontainer process exited with exit code 0
+
+=================================================================================
+2025-12-09 17:43:20.111Z: Running blocking commands...
+2025-12-09 17:43:20.145Z: $ devcontainer up --id-label Type=codespaces --workspace-folder /var/lib/docker/codespacemount/workspace/beheader --mount type=bind,source=/.codespaces/agent/mount/cache,target=/vscode --user-data-folder /var/lib/docker/codespacemount/.persistedshare --container-data-folder .vscode-remote/data/Machine --container-system-data-folder /var/vscode-remote --log-level trace --log-format json --update-remote-user-uid-default never --mount-workspace-git-root false --omit-config-remote-env-from-metadata --skip-non-blocking-commands --expect-existing-container --config "/var/lib/docker/codespacemount/workspace/beheader/.devcontainer/devcontainer.json" --override-config /root/.codespaces/shared/merged_devcontainer.json --default-user-env-probe loginInteractiveShell --container-session-data-folder /workspaces/.codespaces/.persistedshare/devcontainers-cli/cache --secrets-file /root/.codespaces/shared/user-secrets-envs.json
+2025-12-09 17:43:20.423Z: @devcontainers/cli 0.80.0. Node.js v18.20.6. linux 6.8.0-1030-azure x64.
+2025-12-09 17:43:20.819Z: Outcome: success User: vscode WorkspaceFolder: /workspaces/beheader
+2025-12-09 17:43:20.833Z: devcontainer process exited with exit code 0
+
+=================================================================================
+2025-12-09 17:43:20.857Z: Configuring codespace...
+
+=================================================================================
+2025-12-09 17:43:20.857Z: Finished configuring codespace.
