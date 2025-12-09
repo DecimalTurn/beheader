@@ -1,5 +1,6 @@
 {
   "name": "Beheader Development Container",
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainer.schema.json",
   "build": {
     "dockerfile": "Dockerfile"
   },
@@ -13,4 +14,5 @@
   },
   // Verify installations after container creation
   "postCreateCommand": "bun --version && ffmpeg -version && convert --version && mp4edit --version",
+  "postStartCommand": "cat /workspaces/.codespaces/.persistedshare/creation.log"
 }
