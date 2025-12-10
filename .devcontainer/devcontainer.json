@@ -13,6 +13,6 @@
     }
   },
   // Verify installations after container creation
-  "postCreateCommand": "bun --version && ffmpeg -version && convert --version && mp4edit --version",
+  "postCreateCommand": "bun --version && ffmpeg -version && convert --version && mp4edit --version && cp /opt/bento4/bin/mp4edit /workspaces/beheader/mp4edit",
   "postStartCommand": "cat /workspaces/.codespaces/.persistedshare/creation.log"
 }
